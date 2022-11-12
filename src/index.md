@@ -7,4 +7,6 @@ eleventyNavigation:
 
 # Hi my name is Simon!
 
+> This should now deploy with rsync
+
 Great you found my humble website.
