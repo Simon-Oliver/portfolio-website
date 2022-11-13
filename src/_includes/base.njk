@@ -4,13 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" href="/css/style.css" />
     <title>{{ title }}</title>
   </head>
   <body>
-    <nav class="nav">
-      {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+    <div class="header_container">
+ <nav class="nav">
+      {# {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }} #}
+    <ul class="nav-items">   
+        <li><a class="nav__item {{ 'active' if '/' == page.url }}" href="/">Home</a></li>    
+        <li><a class="nav__item {{ 'active' if '/blog' in page.url }}" href="/blog">Blog</a></li>
+        <li><a class="nav__item {{ 'active' if '/projects' in page.url }}" href="/projects">Projects</a></li>
+        <li><a class="nav__item {{ 'active' if '/about' in page.url }}" href="/about">About</a></li>
+    </ul>
     </nav>
+    </div>
+  <main>
+      <div class="content_container">
     {{content | safe}}
+    </div>
+  </main>
     <footer>
       {{helpers.currentYear()}}
     </footer>

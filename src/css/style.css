@@ -1,0 +1,280 @@
+/* Setting border behviour to border-box */
+* {
+  box-sizing: border-box;
+  font-family: Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* ----- Base styles ----- */
+
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+h1 {
+  font-size: 2.6em;
+  line-height: 1.1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.6em;
+  line-height: 1.8em;
+  margin-top: 0.9em;
+  margin-bottom: 0em;
+}
+
+/* Rmeoving default margins of ul and ol */
+ul,
+ol {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+/* Remove default paragraph margins */
+p {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  width: auto;
+  flex-grow: 1;
+  padding: 0 20px;
+  padding: 0 50px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 80px;
+  padding: 40px 50px;
+  font-size: 12px;
+  background-color: #1c1c1c;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
+
+footer p,
+a {
+  font-size: 0.9em;
+}
+
+/* ----- Navigation Styling ----- */
+
+.header_container {
+  display: flex;
+  align-items: center;
+  width: auto;
+  padding: 24px 48px 24px 48px;
+  background-color: white;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+}
+
+nav {
+  display: flex;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #1c1c1c;
+  text-decoration: none;
+}
+
+/* This class will bold the active navigation link */
+.active {
+  font-weight: 600;
+}
+
+/* ----- Home Page Styles ----- */
+
+#home_img {
+  pointer-events: none;
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.home_content {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  margin: 5vh;
+  width: auto;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 500px;
+}
+
+/* Container to align the buttons on the homepage */
+.button_container {
+  height: 50px;
+  margin: 0;
+  padding-top: 16px;
+}
+
+.home_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+/* Styling the link on the homepage to look like a button */
+.call_to_action {
+  padding: 15px 30px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+}
+
+/* Change the style when user hovers over button */
+.call_to_action:hover {
+  color: white;
+  background-color: transparent;
+}
+
+/* ----- Content Pages Styles ----- */
+
+/* Blockquote styling for platypus page */
+blockquote {
+  width: 400px;
+  text-align: center;
+  margin: 24px 0;
+  display: block;
+  position: relative;
+  left: 16px;
+}
+
+/* Adding the oversized quotation marks */
+blockquote::before {
+  font-family: Georgia, serif;
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 80px;
+  text-align: left;
+  position: relative;
+  left: -32px;
+  top: 40px;
+  color: #1c1c1c;
+}
+
+/* Table styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 0;
+}
+
+td,
+th {
+  border: 1px solid #e4e4e4;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  color: white;
+  background-color: #1c1c1c;
+}
+
+/* Styling the body text */
+.content_container {
+  padding: 0 0 24px 0;
+  display: flex;
+}
+
+.content {
+  min-width: 357px;
+  max-width: 725px;
+}
+
+/* Styling the image for the two content pages */
+.content_image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+figure {
+  min-width: 300px;
+  max-width: 300px;
+  margin: 16px 40px 48px 0;
+}
+
+figcaption {
+  font-size: 12px;
+  font-style: italic;
+  line-height: 0;
+}
+
+/* ----- Refrence Page Styling ----- */
+
+.ref_container {
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+#ref_list {
+  width: fit-content;
+  margin: 16px auto;
+}
+
+/* Styling the image on the rfrence page */
+.ref_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-position: 50% 75%;
+  object-fit: cover;
+}
+
+.ref_figure {
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  margin-bottom: 32px;
+  border-radius: 0;
+  height: 40vh;
+  text-align: end;
+}
