@@ -1,4 +1,4 @@
----
+{# ---
 layout: base.njk
 pagination:
   data: blogpost.posts
@@ -12,4 +12,4 @@ permalink: blog/post/{{ post.title | slug }}/index.html
 <p>{{ post.body | safe }}</p>
 
 
-{% endblock %}
+{% endblock %} #}

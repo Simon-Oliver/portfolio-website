@@ -1,7 +1,9 @@
 /* Setting border behviour to border-box */
 * {
   box-sizing: border-box;
-  font-family: Tahoma, sans-serif;
+  /* font-family: Tahoma, sans-serif; */
+
+  font-family: "Source Sans 3", sans-serif;
   font-size: 16px;
   line-height: 24px;
 }
@@ -22,8 +24,8 @@ body {
 h1 {
   font-size: 2.6em;
   line-height: 1.1em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -75,15 +77,42 @@ a {
   font-size: 0.9em;
 }
 
+/* Typography Styles */
+.header-xl {
+  font-family: "Playfair Display", serif;
+  font-size: 4.5em;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.header-sub {
+  font-family: "Playfair Display", serif;
+  margin-top: 0;
+  font-size: 1.5em;
+  margin-bottom: 24px;
+  line-height: 1em;
+  font-weight: 400;
+}
+
+.para-xl {
+  font-size: 2em;
+  font-weight: 200;
+  line-height: 1.5em;
+  margin-bottom: 24px;
+  width: 50vw;
+}
+
 /* ----- Navigation Styling ----- */
 
 .header_container {
   display: flex;
   align-items: center;
   width: auto;
-  padding: 24px 48px 24px 48px;
+  padding: 24px 120px 24px 120px;
+  margin: 0 120px 0 120px;
   background-color: white;
-  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4); */
+  border-bottom: 2px solid #1c1c1c;
   position: sticky;
   top: 0;
 }
@@ -104,6 +133,7 @@ nav ul li {
 nav a {
   color: #1c1c1c;
   text-decoration: none;
+  font-size: 1em;
 }
 
 /* This class will bold the active navigation link */
@@ -151,21 +181,26 @@ nav a {
 
 /* Styling the link on the homepage to look like a button */
 .call_to_action {
+  position: relative;
+  display: inline-block;
+  /* display: inline-block; */
+  left: -15px;
   padding: 15px 30px;
   border-style: solid;
+  border-color: black;
   border-width: 2px;
-  border-radius: 8px;
+  border-radius: 500px;
   text-decoration: none;
+  font-size: 1.5em;
   font-weight: 700;
   text-align: center;
-  margin-top: 10px;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 /* Change the style when user hovers over button */
 .call_to_action:hover {
-  color: white;
+  color: black;
   background-color: transparent;
 }
 
@@ -216,7 +251,7 @@ th {
 
 /* Styling the body text */
 .content_container {
-  padding: 0 0 24px 0;
+  padding: 24px 120px 24px 120px;
   display: flex;
 }
 

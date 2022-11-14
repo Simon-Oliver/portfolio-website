@@ -1,4 +1,4 @@
----
+{# ---
 layout: base.njk
 pagination:
     data: blogpost.posts
@@ -11,10 +11,10 @@ eleventyNavigation:
 
 {% set htmlTitle = post.title %}
 {% block content %}
-  <h2>Unfiltered, raw and probably full of typos</h2>
+  <h2>Unfiltered, raw and probably full of typos</h2> #}
 
   {# loop through paginated item #}
-  {% for post in pagination.items %}
+  {# {% for post in pagination.items %}
     {% if loop.first %}<ul>{% endif %}
       <li>
         <h2><a href="/blog/post/{{ post.title | slug }}">{{ post.title }} </a></h2>
@@ -22,10 +22,10 @@ eleventyNavigation:
         <br>
       </li>
     {% if loop.last %}</ul>{% endif %}
-  {% endfor %}
+  {% endfor %} #}
 
   {# pagination #}
-  {% if pagination.hrefs | length > 0 %}
+  {# {% if pagination.hrefs | length > 0 %}
   <ul>
     {% if pagination.previousPageHref %}
       <li><a href="{{ pagination.previousPageHref }}">Previous page</a></li>
@@ -36,4 +36,4 @@ eleventyNavigation:
   </ul>
   {% endif %}
 
-{% endblock %}
+{% endblock %} #}
