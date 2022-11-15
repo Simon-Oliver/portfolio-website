@@ -5,14 +5,16 @@ eleventyNavigation:
   key: Home
 ---
 
-<h1 class="header-xl">Hi there, I’m Simon.</h1>
+<h1 class="header-xl">Hi there,<br class="header-break"> I’m Simon.</h1>
 <h2 class='header-sub'>Software Engineering Student at the University of Canberra</h2>
 
 <p class="para-xl">
-I'm an experienced communicator with a passion for beautiful and functional
-products. Creating things gets me excited!
+I'm an experienced communicator with a passion for beautiful and functional products. Creating things gets me excited!
 </p>
 
+<!-- <p class="para-xl">
+Welcome to the Process Masterclass. An in depth online design course for UI/UX design. Learn design thinking and design execution, and become a more valuable designer.
+</p> -->
 <div>
 <a class="call_to_action" href="/projects/">SEE MY WORK</a>
 </div>

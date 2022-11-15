@@ -1,0 +1,13 @@
+---
+layout: base.njk
+eleventyNavigation:
+  key: Projects
+---
+
+<h1>Projects Page</h1>
+<ul>
+{% for item in collections.project%}
+<li><a href="/projects/{{item.data.page.fileSlug | slug}}">{{ item.data.page.fileSlug }}</a></li>
+{% endfor %}
+</ul>
+

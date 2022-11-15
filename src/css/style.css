@@ -50,10 +50,11 @@ p {
 main {
   display: flex;
   align-items: center;
-  width: auto;
+  justify-content: center;
+  width: 100vw;
   flex-grow: 1;
-  padding: 0 20px;
-  padding: 0 50px;
+  /* padding: 0 20px;
+  padding: 0 50px; */
 }
 
 footer {
@@ -80,7 +81,7 @@ a {
 /* Typography Styles */
 .header-xl {
   font-family: "Playfair Display", serif;
-  font-size: 4.5em;
+  font-size: 4em;
   margin-bottom: 12px;
   font-weight: 800;
 }
@@ -88,18 +89,24 @@ a {
 .header-sub {
   font-family: "Playfair Display", serif;
   margin-top: 0;
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin-bottom: 24px;
   line-height: 1em;
   font-weight: 400;
 }
 
 .para-xl {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 200;
   line-height: 1.5em;
-  margin-bottom: 24px;
-  width: 50vw;
+  margin-bottom: 36px;
+  max-width: 600px;
+}
+
+@media screen and (min-width: 750px) {
+  .header-break {
+    display: none;
+  }
 }
 
 /* ----- Navigation Styling ----- */
@@ -108,17 +115,20 @@ a {
   display: flex;
   align-items: center;
   width: auto;
-  padding: 24px 120px 24px 120px;
-  margin: 0 120px 0 120px;
+  padding: 16px 0;
+  width: 90vw;
+  margin: 0 5vw;
   background-color: white;
   /* box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4); */
-  border-bottom: 2px solid #1c1c1c;
+  border-bottom: 0.5px solid #1c1c1c;
   position: sticky;
   top: 0;
 }
 
 nav {
   display: flex;
+  margin-left: auto;
+  margin-right: 5vw;
 }
 
 nav ul {
@@ -127,7 +137,7 @@ nav ul {
 }
 
 nav ul li {
-  margin-left: 20px;
+  margin-left: 24px;
 }
 
 nav a {
@@ -181,18 +191,18 @@ nav a {
 
 /* Styling the link on the homepage to look like a button */
 .call_to_action {
-  position: relative;
+  /* position: relative; */
   display: inline-block;
   /* display: inline-block; */
-  left: -15px;
+  /* left: -15px; */
   padding: 15px 30px;
   border-style: solid;
   border-color: black;
   border-width: 2px;
-  border-radius: 500px;
+  /* border-radius: 500px; */
   text-decoration: none;
-  font-size: 1.5em;
-  font-weight: 700;
+  font-size: 1.25em;
+  font-weight: 400;
   text-align: center;
   background-color: black;
   color: white;
@@ -251,8 +261,11 @@ th {
 
 /* Styling the body text */
 .content_container {
-  padding: 24px 120px 24px 120px;
-  display: flex;
+  margin: 24px 10vw;
+  /* padding: 0 vw; */
+  /*   width: auto;
+  wpadding: 24px 120px 24px 120px;
+  display: flex; */
 }
 
 .content {
