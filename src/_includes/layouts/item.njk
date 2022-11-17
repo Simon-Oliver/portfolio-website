@@ -1,7 +1,12 @@
 ---
 layout: base.njk
-permalink: projects/{{ page.fileSlug | slug }}/index.html
+permalink: projects/posts/{{ page.fileSlug | slug }}/index.html
 ---
 {%block content %}
-    {{content | safe}}
+<div class="content_container">
+    <h1>{{title}}</h1>
+    <div><time>{{page.date | readablePostDate}}</time> | Last Modified: {{date}} | {{readTime}} read </div>
+        {{content | safe}}
+</div>
+
 {%endblock %}
