@@ -1,7 +1,8 @@
 name: github-deploy
-on: [push]
-  branches:
-    - main
+on:
+  push:
+    branches:
+      - main
 jobs:
   write-to-console:
     runs-on: ubuntu-latest
