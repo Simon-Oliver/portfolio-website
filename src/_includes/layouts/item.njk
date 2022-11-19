@@ -5,7 +5,7 @@ permalink: projects/posts/{{ page.fileSlug | slug }}/index.html
 {%block content %}
 <div class="content_container">
     <h1>{{title}}</h1>
-    <div><time>{{page.date | readablePostDate}}</time> | Last Modified: {{date}} | {{readTime}} read </div>
+    <div class="post-meta">{{date | readablePostDate}} &ensp;|&ensp; {{readTime}} read </div>
         {{content | safe}}
 </div>
 
