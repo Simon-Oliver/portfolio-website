@@ -3,12 +3,14 @@ layout: base.njk
 eleventyNavigation:
   key: Projects
 ---
-{% for item in collections.project%}
+<div class="project-container">
 
-  <div class="blog-card">
-     <div class="meta">
+  {% for item in collections.project%}
+
+    <div class="blog-card">
+      <div class="meta">
         <div class="photo" style="background-image: url({{item.data.headerImage}})"></div>
-        <ul class="details">
+        {# <ul class="details">
           <li class="author"><a href="#">user name</a></li>
           <li class="date">{{item.data.date | readablePostDate}}</li>
           {%if item.data.categories%}
@@ -21,19 +23,19 @@ eleventyNavigation:
           </ul>
           </li>
           {%endif%}
-        </ul>
+        </ul> #}
       </div>
       <div class="description">
         <h1>{{ item.data.title }}</h1>
-        <h2>Lorem ipsum dolor sit amet</h2>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
-    
-   
+        <h2>{{item.date | readablePostDate}} &ensp;|&ensp; {{item.data.readTime}} read</h2>
+        <p>{{item.data.description}}</p>
+
       </div>
-             <a href="/projects/posts/{{item.data.page.fileSlug | slug}}">
-     <span class="card-link"></span>
-    </a>
-  </div>
+      <a href="/projects/posts/{{item.data.page.fileSlug | slug}}">
+        <span class="card-link"></span>
+      </a>
+    </div>
 
-{% endfor %}
+  {% endfor %}
 
+</div>

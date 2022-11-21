@@ -4,6 +4,7 @@ date: 2022-11-10
 categories: ["java", "cats"]
 readTime: 4 min.
 headerImage: /assets/img/forest.jpg
+description: In hac habitasse platea dictumst. Sed cursus, libero maximus euismod pulvinar, mauris ligula rutrum eros, ut euismod enim nunc eu sem. Integer mattis nunc at lobortis accumsan.
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet sapien id cursus faucibus. Proin vitae erat sit amet nibh finibus vestibulum. Cras nec mollis enim. Quisque sed sem feugiat, consequat mauris a, rhoncus lorem. Nunc lobortis, odio vitae tempor scelerisque, sem quam gravida ante, id semper libero neque non erat. Curabitur at quam ante. Nulla vitae lectus vel leo iaculis aliquet. Fusce aliquet nisl ante, nec fermentum lacus ultricies ac.
@@ -15,6 +16,16 @@ In hac habitasse platea dictumst. Sed cursus, libero maximus euismod pulvinar, m
 ![Green Forest with fog hanging in the trees](/assets/img/forest.jpg)
 
 Proin vel nibh pharetra, sagittis turpis pretium, pellentesque nulla. Mauris in augue ac magna facilisis accumsan. Donec a suscipit magna. Aliquam sollicitudin ultrices neque, non finibus nisl euismod a. Fusce commodo libero ac magna dignissim elementum. Nullam hendrerit, felis non scelerisque imperdiet, metus purus faucibus nisl, in lacinia dui mauris non sem. Praesent ultricies ex ut arcu maximus, et semper tortor mollis.
+
+```js
+eleventyConfig.addFilter("postDate", (dateObj) => {
+  return DateTime.fromJSDate(dateObj, {
+    zone: "Australia/Sydney",
+  })
+    .setLocale("en")
+    .toISODate();
+});
+```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam urna augue, porta sed lorem sit amet, molestie fringilla neque. Integer id odio maximus, dignissim augue non, luctus ipsum. Nam vel scelerisque nibh. In hac habitasse platea dictumst. Duis eget maximus enim. Sed sollicitudin imperdiet nisl, quis tincidunt turpis pulvinar nec. Curabitur at pretium eros. Nulla in viverra dolor, vel eleifend libero. Phasellus eu est placerat, ultricies mi non, tincidunt orci. Phasellus non venenatis dui. Donec eu lacinia purus. Vivamus aliquam tempus egestas. Vestibulum ac facilisis tortor, et pulvinar est. Phasellus ut nisl at felis hendrerit fringilla. Morbi feugiat dolor vitae erat euismod consectetur.
 

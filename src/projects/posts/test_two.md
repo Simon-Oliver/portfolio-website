@@ -3,6 +3,7 @@ title: Another Awesome Project I Created
 date: 2022-01-19
 readTime: 4 min.
 headerImage: /assets/img/test_one.jpg
+description: In hac habitasse platea dictumst. Sed cursus, libero maximus euismod pulvinar, mauris ligula rutrum eros, ut euismod enim nunc eu sem. Integer mattis nunc at lobortis accumsan.
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet sapien id cursus faucibus. Proin vitae erat sit amet nibh finibus vestibulum. Cras nec mollis enim. Quisque sed sem feugiat, consequat mauris a, rhoncus lorem. Nunc lobortis, odio vitae tempor scelerisque, sem quam gravida ante, id semper libero neque non erat. Curabitur at quam ante. Nulla vitae lectus vel leo iaculis aliquet. Fusce aliquet nisl ante, nec fermentum lacus ultricies ac. In hac habitasse platea dictumst. Sed cursus, libero maximus euismod pulvinar, mauris ligula rutrum eros, ut euismod enim nunc eu sem. Integer mattis nunc at lobortis accumsan. Mauris magna ex, semper quis viverra ut, ornare in purus. Phasellus tempor ultrices felis, ac ultricies ante elementum sit amet. Curabitur a porta elit.
