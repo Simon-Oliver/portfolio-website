@@ -5,7 +5,7 @@ eleventyNavigation:
 ---
 <div class="project-container">
 
-  {% for item in collections.project%}
+  {% for item in collections.project | sortByOrder%}
 
     <div class="blog-card">
       <div class="meta">

@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   font-size: 1em;
   line-height: 1.5em;
+  align-items: center;
 }
 
 h1 {
@@ -51,11 +52,10 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 57px;
   width: 100vw;
   flex-grow: 1;
   flex-direction: column;
-  /* padding: 0 20px;
-  padding: 0 50px; */
 }
 
 footer {
@@ -64,8 +64,8 @@ footer {
   flex-direction: row;
   width: 100%;
   height: 80px;
-  padding: 40px 50px;
-  font-size: 12px;
+  padding: 40px 5vw;
+  font-size: 0.75rem;
   background-color: #1c1c1c;
   color: white;
 }
@@ -79,45 +79,9 @@ a {
   font-size: 0.9em;
 }
 
-/* Typography Styles */
-.header-xl {
-  /* font-family: "Playfair Display", serif; */
-  font-family: "Roboto", sans-serif;
-  font-size: 3.75em;
-  line-height: 1em;
-  margin-bottom: 12px;
-  font-weight: 900;
-}
-
-.header-sub {
-  /* font-family: "Playfair Display", serif; */
-  font-family: "Roboto", sans-serif;
-  margin-top: 0;
-  font-size: 1.25em;
-  margin-bottom: 24px;
-  line-height: 1.25em;
-  font-style: italic;
-  font-weight: 300;
-}
-
-.para-xl {
-  font-size: 1.5em;
-  font-weight: 400;
-  line-height: 1.5em;
-  margin-bottom: 36px;
-  min-width: 327px;
-  width: 55vw;
-}
-
-@media screen and (min-width: 750px) {
-  .header-break {
-    display: none;
-  }
-}
-
 /* ----- Navigation Styling ----- */
 
-.header_container {
+/* .header_container {
   display: flex;
   align-items: center;
   width: 100vw;
@@ -125,9 +89,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 999;
-}
+} */
 
-nav {
+/* nav {
   display: flex;
   width: 90vw;
   margin: 0 5vw;
@@ -151,11 +115,49 @@ nav a {
   text-decoration: none;
   font-size: 1em;
   font-family: "Roboto", sans-serif;
-}
+} */
 
 /* This class will bold the active navigation link */
 .active {
   font-weight: 600;
+}
+
+/*  ----- Landing Page  -----*/
+.header-xl {
+  font-family: "Roboto", sans-serif;
+  font-size: 3.75em;
+  line-height: 1em;
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+
+.header-sub {
+  font-family: "Roboto", sans-serif;
+  margin-top: 0;
+  font-size: 1.25em;
+  margin-bottom: 24px;
+  line-height: 1.25em;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.para-xl {
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin-bottom: 36px;
+  min-width: 327px;
+  width: 55vw;
+}
+
+.landing_container {
+  margin: 24px 5vw;
+}
+
+@media screen and (min-width: 1500px) {
+  .landing_container {
+    font-size: 1.2vw;
+  }
 }
 
 /* ----- Home Page Styles ----- */
@@ -198,15 +200,11 @@ nav a {
 
 /* Styling the link on the homepage to look like a button */
 .call_to_action {
-  /* position: relative; */
   display: inline-block;
-  /* display: inline-block; */
-  /* left: -15px; */
   padding: 15px 30px;
   border-style: solid;
   border-color: black;
   border-width: 2px;
-  /* border-radius: 500px; */
   text-decoration: none;
   font-size: 1.25em;
   font-weight: 600;
@@ -266,22 +264,10 @@ th {
   background-color: #1c1c1c;
 }
 
-.landing_container {
-  margin: 24px 5vw;
-}
-
-@media screen and (min-width: 1500px) {
-  .landing_container {
-    font-size: 1.2vw;
-  }
-}
-
 .content_container {
   margin: 24px 5vw;
   padding: 0 vw;
-  /* overflow: hidden; */
   max-width: 75ch;
-  /* padding: 24px 120px 24px 120px; */
 }
 
 .content_container p {
@@ -291,17 +277,17 @@ th {
 
 .content_container h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 3em;
-  line-height: 1.25em;
+  font-size: 2.5rem;
+  line-height: 1.2em;
   margin-bottom: 0.75rem;
   font-weight: 800;
 }
 
 .content_container h2 {
   font-family: "Roboto", sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.25em;
-  margin: 0 0 0.75rem 0;
+  margin: 2rem 0 0.5rem 0;
   font-weight: 600;
 }
 
@@ -326,8 +312,11 @@ th {
 
 .post-meta {
   font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #a2a2a2;
   margin-bottom: 2em;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .content {
@@ -399,6 +388,11 @@ figcaption {
   height: 150px;
 }
 
+pre code {
+  display: inline-block;
+  width: 80vw;
+  overflow-x: auto;
+}
 /* Project Cards List */
 
 .card-link {
@@ -434,15 +428,7 @@ figcaption {
 .blog-card:hover {
   transform: scale(1.025);
 }
-/* .blog-card a {
-  color: inherit;
-}
-.blog-card a:hover {
-  color: #5ad67d;
-}
-.blog-card:hover .photo {
-  transform: scale(1.3) rotate(3deg);
-} */
+
 .blog-card .meta {
   position: relative;
   z-index: 0;
@@ -546,5 +532,166 @@ figcaption {
   }
   .blog-card.alt .details {
     padding-left: 25px;
+  }
+  .content_container h1 {
+    font-size: 3em;
+    line-height: 1.25em;
+  }
+
+  .content_container h2 {
+    font-size: 2em;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.25em;
+  }
+  .header-break {
+    display: none;
+  }
+}
+
+.header {
+  width: 100vw;
+  padding: 16px 5vw 0 5vw;
+  /* border-bottom: 1px solid #1c1c1c; */
+  background-color: #fff;
+  /* box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1); */
+  position: fixed;
+  /* min-height: 56px; */
+  /* width: 100%; */
+  z-index: 3;
+}
+
+.header_container {
+  border-bottom: 1px solid #1c1c1c;
+  padding-bottom: 15px;
+  padding-right: 5vw;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  color: #1c1c1c;
+  text-decoration: none;
+  font-size: 1em;
+  line-height: 1rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.25rem;
+  /* margin-top: 0.75rem; */
+  font-family: "Roboto", sans-serif;
+  /* padding: 0; */
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 6px 0px;
+  position: relative;
+  user-select: none;
+  margin-bottom: 8px;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 24px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 7px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -7px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0rem;
+  }
+  .header .menu {
+    clear: none;
+    margin-left: auto;
+    max-height: none;
+    width: fit-content;
+  }
+  .header .menu-icon {
+    display: none;
   }
 }

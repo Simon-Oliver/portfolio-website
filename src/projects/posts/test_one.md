@@ -1,6 +1,7 @@
 ---
 title: A misty fogy forest in the middle of nowhere
 date: 2022-11-10
+order: 1
 categories: ["java", "cats"]
 readTime: 4 min.
 headerImage: /assets/img/forest.jpg
