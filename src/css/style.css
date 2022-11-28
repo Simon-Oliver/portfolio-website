@@ -296,7 +296,7 @@ th {
   max-width: 65ch;
 }
 
-.content_container a {
+.content_container p a {
   font-family: "Inter", sans-serif;
   font-size: 1em;
   text-decoration: underline;
@@ -306,7 +306,7 @@ th {
   transition-timing-function: ease-in-out;
 }
 
-.content_container a:hover {
+.content_container p a:hover {
   color: #457b9d;
 }
 
@@ -328,7 +328,7 @@ th {
   font-family: "Jost", sans-serif;
   font-size: 1.5em;
   line-height: 1.25em;
-  margin: 2rem 0 0.5rem 0;
+  margin: 1rem 0 0.5rem 0;
   font-weight: 600;
 }
 
@@ -350,7 +350,13 @@ th {
   margin-top: 2em;
 }
 
-.content_container img {
+figure {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.content_container figure img {
   position: relative;
   width: 100%;
   width: calc(100% + 10vw);
@@ -381,11 +387,11 @@ th {
   border-radius: 8px;
 }
 
-figure {
+/* figure {
   min-width: 300px;
   max-width: 300px;
   margin: 16px 40px 48px 0;
-}
+} */
 
 figcaption {
   font-size: 12px;
