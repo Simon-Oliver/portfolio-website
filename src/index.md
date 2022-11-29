@@ -10,7 +10,7 @@ eleventyNavigation:
 <h2 class='header-sub'>Software Engineering Student at the  <br class="header-break"> University of Canberra</h2>
 
 <p class="para-xl">
-I'm an experienced communicator with a passion for beautiful and functional products. Creating things gets me excited!
+I'm an experienced communicator with a passion for beautiful and functional products. 
 </p>
 
 <!-- <p class="para-xl">
