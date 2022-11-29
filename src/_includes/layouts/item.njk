@@ -3,10 +3,11 @@ layout: base.njk
 permalink: projects/posts/{{ page.fileSlug | slug }}/index.html
 ---
 {%block content %}
-<div class="content_container">
-    <h1>{{title}}</h1>
-    <div class="post-meta">{{date | readablePostDate}} &ensp;|&ensp; {{readTime}} read </div>
-        {{content | safe}}
-</div>
+    <div class="content_container">
+        <h1>{{title}}</h1>
+        <div class="post-meta">{{date | readablePostDate}} &ensp;|&ensp; {{readTime}} read </div>
+        {# {{content | safe}} #}
+        {{ content | replace("<p><img", "<figure><img") | replace("></p>", "></figure>") | safe }}
+    </div>
 
 {%endblock %}

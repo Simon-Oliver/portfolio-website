@@ -1,0 +1,18 @@
+---
+layout: base.njk
+---
+{%block content %}
+    <div class="content_container about">
+        {# {{content | safe}} #}
+        {{ content | replace("<p><img", "<figure><img") | replace("></p>", "></figure>") | safe }}
+        <div class="contact-container">
+            <a class="call_to_action" href="mailto:info.stauffer@gmail.com">CONTACT ME</a>
+            <div class="contact-icons">
+                <a href="https://github.com/Simon-Oliver" target="_blank" rel="noopener noreferrer"><img src="/assets/icons/github.png" alt=""></a>
+                <a href="https://www.linkedin.com/in/simon-stauffer-0a5ab393/" target="_blank" rel="noopener noreferrer"><img src="/assets/icons/linkedin.png" alt=""></a>
+                <a href="https://www.instagram.com/simon_oliver" target="_blank" rel="noopener noreferrer"><img src="/assets/icons/instagram.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+{%endblock %}

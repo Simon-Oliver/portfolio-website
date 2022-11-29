@@ -1,14 +1,16 @@
 ---
-title: A misty fogy forest in the middle of nowhere
+title: Quae diligentissime contra Aristonem dicuntur a Chryippo.
 date: 2022-11-10
+order: 1
 categories: ["java", "cats"]
 readTime: 4 min.
 headerImage: /assets/img/forest.jpg
+description: In hac habitasse platea dictumst. Sed cursus, libero maximus euismod pulvinar, mauris ligula rutrum eros, ut euismod enim nunc eu sem. Integer mattis nunc at lobortis accumsan.
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet sapien id cursus faucibus. Proin vitae erat sit amet nibh finibus vestibulum. Cras nec mollis enim. Quisque sed sem feugiat, consequat mauris a, rhoncus lorem. Nunc lobortis, odio vitae tempor scelerisque, sem quam gravida ante, id semper libero neque non erat. Curabitur at quam ante. Nulla vitae lectus vel leo iaculis aliquet. Fusce aliquet nisl ante, nec fermentum lacus ultricies ac.
 
-## What is the reason for the fog?
+## At ille pellit, qui permulcet sensum voluptate
 
 In hac habitasse platea dictumst. Sed cursus, libero maximus euismod pulvinar, mauris ligula rutrum eros, ut euismod enim nunc eu sem. Integer mattis nunc at lobortis accumsan. Mauris magna ex, semper quis viverra ut, ornare in purus. Phasellus tempor ultrices felis, ac ultricies ante elementum sit amet. Curabitur a porta elit.
 
@@ -16,9 +18,19 @@ In hac habitasse platea dictumst. Sed cursus, libero maximus euismod pulvinar, m
 
 Proin vel nibh pharetra, sagittis turpis pretium, pellentesque nulla. Mauris in augue ac magna facilisis accumsan. Donec a suscipit magna. Aliquam sollicitudin ultrices neque, non finibus nisl euismod a. Fusce commodo libero ac magna dignissim elementum. Nullam hendrerit, felis non scelerisque imperdiet, metus purus faucibus nisl, in lacinia dui mauris non sem. Praesent ultricies ex ut arcu maximus, et semper tortor mollis.
 
+```js
+eleventyConfig.addFilter("postDate", (dateObj) => {
+  return DateTime.fromJSDate(dateObj, {
+    zone: "Australia/Sydney",
+  })
+    .setLocale("en")
+    .toISODate();
+});
+```
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam urna augue, porta sed lorem sit amet, molestie fringilla neque. Integer id odio maximus, dignissim augue non, luctus ipsum. Nam vel scelerisque nibh. In hac habitasse platea dictumst. Duis eget maximus enim. Sed sollicitudin imperdiet nisl, quis tincidunt turpis pulvinar nec. Curabitur at pretium eros. Nulla in viverra dolor, vel eleifend libero. Phasellus eu est placerat, ultricies mi non, tincidunt orci. Phasellus non venenatis dui. Donec eu lacinia purus. Vivamus aliquam tempus egestas. Vestibulum ac facilisis tortor, et pulvinar est. Phasellus ut nisl at felis hendrerit fringilla. Morbi feugiat dolor vitae erat euismod consectetur.
 
-## Why do we like the fog?
+## Omnes enim iucundum motum
 
 Etiam id dui vestibulum, rutrum nibh nec, pretium nisl. Vestibulum et placerat ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec gravida dolor in tellus viverra congue. Maecenas malesuada commodo est. Pellentesque fermentum mauris sit amet mauris egestas blandit dictum nec turpis. Cras luctus nibh id quam lobortis, euismod auctor tellus auctor. Etiam ultrices arcu sed nisi porttitor pellentesque. Cras sollicitudin eget justo in sollicitudin.
 
