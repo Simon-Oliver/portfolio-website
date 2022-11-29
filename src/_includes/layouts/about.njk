@@ -3,7 +3,8 @@ layout: base.njk
 ---
 {%block content %}
     <div class="content_container about">
-        {{content | safe}}
+        {# {{content | safe}} #}
+        {{ content | replace("<p><img", "<figure><img") | replace("></p>", "></figure>") | safe }}
         <div class="contact-container">
             <a class="call_to_action" href="mailto:info.stauffer@gmail.com">CONTACT ME</a>
             <div class="contact-icons">

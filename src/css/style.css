@@ -356,6 +356,11 @@ figure {
   margin-bottom: 1.5rem;
 }
 
+.about figure {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
 .content_container figure img {
   position: relative;
   width: 100%;

@@ -2,7 +2,7 @@
 title: Creating my portfolio site
 date: 2022-11-21
 order: 0
-readTime: 4 min.
+readTime: 2 min.
 headerImage: /assets/img/device_mashups.jpg
 description: Personal portfolio site to showcase my projects. The site is self-hosted using a Linode VPS, eleventy for the static site generation and GitHub actions for automatic deployment.
 ---
