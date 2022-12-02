@@ -4,6 +4,10 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="software engineering, web development, canberra, act, {{keywords}}">
+    <meta name="description" content="{{description}}"/>
+    <meta name="author" content="Simon Stauffer"/>
+    <meta name="date" content="{{date|postDate}}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,13 +22,6 @@
   <body>
     <header class='header'>
       <div class="header_container">
-        {# <nav > #}
-        {#
-        {{
-          collections.all | eleventyNavigation | eleventyNavigationToHtml | safe
-        }}
-        #}
-
         <input class="menu-btn" type="checkbox" id="menu-btn"/>
         <label class="menu-icon" for="menu-btn">
           <span class="navicon"></span></label>
@@ -49,11 +46,11 @@
             >
           </li>
         </ul>
-        {# </nav> #}
       </div>
     </header>
     <main>
       {{ content | safe }}
+
     </main>
     <footer>Copyright © {{ helpers.currentYear() }} Simon Stauffer</footer>
   </body>

@@ -1,5 +1,9 @@
 ---
 layout: layouts/about.njk
+date: 2022-11-21
+keywords: about page
+title: about
+description: Swiss-Australian software engineer with a passion for crafting and creating. Studying Software Engineering at the University of Canberra. Former chef with experience in government and technology.
 eleventyNavigation:
   key: Projects
 ---
