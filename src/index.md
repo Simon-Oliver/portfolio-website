@@ -1,6 +1,9 @@
 ---
-title: This is my homepage
+title: Hi there, I'm Simon
 layout: layouts/home.njk
+date: 2022-11-21
+keywords: home page
+description: Software Engineering Student at the  University of Canberra. I'm an experienced communicator with a passion for beautiful and functional products.
 eleventyNavigation:
   key: Home
 ---
@@ -12,10 +15,6 @@ eleventyNavigation:
 <p class="para-xl">
 I'm an experienced communicator with a passion for beautiful and functional products. 
 </p>
-
-<!-- <p class="para-xl">
-Welcome to the Process Masterclass. An in depth online design course for UI/UX design. Learn design thinking and design execution, and become a more valuable designer.
-</p> -->
 <div>
 <a class="call_to_action" href="/projects/">SEE MY WORK</a>
 </div>
