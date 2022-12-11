@@ -54,8 +54,10 @@ jobs:
 
 ## Design
 
-The design of the site was inspired by wired.com and nike.com. I was striving for a clean but sophisticated look. No framework was used, and the CSS was written from scratch. Low-fidelity wireframes were used to explore the basic layout before jumping into Figma to work out spacing and typography.
+The site's design was inspired by wired.com and nike.com, which have clean and sophisticated looks. I wanted to create a similar aesthetic for my portfolio, so I used clean fonts and a simple layout. No framework was used, and the CSS was written from scratch. To explore the site's basic layout, I created low-fidelity wireframes for both mobile and desktop versions. This allowed me to experiment with different designs and navigation options before moving to Figma to work out the final details.
 
 ![Low fidelity sketches of mobile and desktop wireframes.](../../../assets/img/wireframes.jpg)
 
-Regarding typography, I'm using [Inter](https://github.com/rsms/inter) for the body text. Inter was explicitly designed with screens in mind and featured a tall x-height to increase readability. The headings are set in [Roboto](https://fonts.google.com/specimen/Roboto) to add a little more weight to them. Again, I wanted to keep it simple but decided to add some interest in drop caps.
+In Figma, I focused on creating cohesive spacing and typography to create a clean, professional look. For the body text, I choose [Inter](https://github.com/rsms/inter). Inter is a font specifically designed for screens with a tall x-height to improve readability. For the headings, I used [Roboto](https://fonts.google.com/specimen/Roboto) to add a little more weight and emphasis. Finally, I used drop caps for each paragraph's first letter to add some interest to the design. My goal was to create a clean, sophisticated portfolio site that showcases my projects and skills professionally. The design achieves this while still being visually interesting and engaging for visitors.
+
+Overall, the process of creating and hosting my own website has been a valuable learning experience. I've gained a deeper understanding of server setups and deployment, and I'm excited to continue developing and improving my site in the future.
