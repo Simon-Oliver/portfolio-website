@@ -2,8 +2,9 @@
 title: Creating my portfolio site
 keywords: eleventy, portfolio, website, creating, wireframe, linode
 date: 2022-11-21
-order: 0
+order: 99
 readTime: 2 min.
+github: https://github.com/Simon-Oliver/portfolio-website
 headerImage: /assets/img/device_mashups.jpg
 description: Personal portfolio site to showcase my projects. The site is self-hosted using a Linode VPS, eleventy for the static site generation and GitHub actions for automatic deployment.
 ---

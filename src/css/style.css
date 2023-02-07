@@ -310,6 +310,20 @@ th {
   color: #457b9d;
 }
 
+.post-meta a {
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  text-decoration: underline;
+  color: rgb(26, 26, 26);
+  transition-property: color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.post-meta a:hover {
+  color: #457b9d;
+}
+
 .content_container p {
   line-height: 1.75em;
   margin-bottom: 1.5em;
@@ -700,6 +714,24 @@ pre code {
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
+}
+
+div.noteInfo {
+  background-color: #f0f7fb;
+  border-left: solid 4px #3498db;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 16px;
+  margin: 24px 0;
+}
+
+div.noteWarning {
+  background-color: #fdf4eb;
+  border-left: solid 4px #f19537;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 16px;
+  margin: 24px 0;
 }
 
 /* 48em = 768px */
