@@ -1,2 +1,3 @@
-blog/
+/blog/
+/blog/posts/test_*.md
 /projects/posts/test_*.md

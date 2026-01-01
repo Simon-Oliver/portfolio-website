@@ -1,39 +1,31 @@
-{# ---
+---
 layout: base.njk
-pagination:
-    data: blogpost.posts
-    size: 10
-    alias: post
-permalink: "blog{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber}}{% endif %}/index.html"
+title: Blog
+description: Notes, experiments, and longer write-ups.
+date: 2022-11-21
+permalink: /blog/index.html
 eleventyNavigation:
   key: Blog
 ---
+<div class="project-container">
 
-{% set htmlTitle = post.title %}
-{% block content %}
-  <h2>Unfiltered, raw and probably full of typos</h2> #}
+  {% for item in collections.blog | reverse %}
 
-  {# loop through paginated item #}
-  {# {% for post in pagination.items %}
-    {% if loop.first %}<ul>{% endif %}
-      <li>
-        <h2><a href="/blog/post/{{ post.title | slug }}">{{ post.title }} </a></h2>
-        <p>by {{ post.userId }}  </p>
-        <br>
-      </li>
-    {% if loop.last %}</ul>{% endif %}
-  {% endfor %} #}
+    <div class="blog-card">
+      <div class="meta">
+        <div class="photo" style="background-image: url({{item.data.headerImage}})"></div>
+      </div>
+      <div class="description">
+        <h1>{{ item.data.title }}</h1>
+        <h2>{{item.date | readablePostDate}} &ensp;|&ensp; {{item.data.readTime}} read</h2>
+        <p>{{item.data.description}}</p>
 
-  {# pagination #}
-  {# {% if pagination.hrefs | length > 0 %}
-  <ul>
-    {% if pagination.previousPageHref %}
-      <li><a href="{{ pagination.previousPageHref }}">Previous page</a></li>
-    {% endif %}
-    {% if pagination.nextPageHref %}
-      <li><a href="{{ pagination.nextPageHref }}">Next page</a></li>
-    {% endif %}
-  </ul>
-  {% endif %}
+      </div>
+      <a href="/blog/posts/{{item.data.page.fileSlug | slug}}">
+        <span class="card-link"></span>
+      </a>
+    </div>
 
-{% endblock %} #}
+  {% endfor %}
+
+</div>
