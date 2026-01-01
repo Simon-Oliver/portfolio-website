@@ -3,7 +3,7 @@ title: Hi there, I'm Simon
 layout: layouts/home.njk
 date: 2022-11-21
 keywords: home page
-description: Software Engineering Student at the  University of Canberra. I'm an experienced communicator with a passion for beautiful and functional products.
+description: Personal site for projects and notes on software engineering and cyber security.
 eleventyNavigation:
   key: Home
 ---
