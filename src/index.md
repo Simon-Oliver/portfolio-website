@@ -13,7 +13,7 @@ eleventyNavigation:
 <h2 class='header-sub'> Software engineering and cyber security | Canberra, Australia</h2>
 
 <p class="para-xl">
-A scratchpad for projects, notes, and experiments, mostly tech, occasionally food.
+This site is a scratchpad for projects, notes, and experiments, mostly tech, occasionally food.
 </p>
 <div>
 <a class="call_to_action" href="/projects/">SEE MY WORK</a>
