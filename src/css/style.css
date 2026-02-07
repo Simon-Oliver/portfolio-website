@@ -581,7 +581,7 @@ pre code {
     line-height: 1.25em;
   }
   .header-break {
-    display: none;
+    /* display: none; */
   }
 }
 
