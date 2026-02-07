@@ -19,8 +19,8 @@ module.exports = function (eleventyConfig) {
 		},
 		metadata: {
 			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
+			title: "stauffersimon.com",
+			subtitle: "A scratchpad for projects, notes, and experiments, mostly tech, occasionally food",
 			base: "https://stauffersimon.com/",
 			author: {
 				name: "Your Name",
