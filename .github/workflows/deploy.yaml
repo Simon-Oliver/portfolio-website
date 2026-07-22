@@ -1,31 +1,170 @@
-name: github-deploy
+name: Deploy 11ty website
+
 on:
   push:
     branches:
       - main
-jobs:
-  write-to-console:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies & build
-        run: |
-          npm ci
-          npm run build
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
+  # Also allows a manual run from the GitHub Actions page.
+  workflow_dispatch:
+
+# The workflow only needs permission to read the repository.
+permissions:
+  contents: read
+
+# Prevent two production deployments running simultaneously.
+concurrency:
+  group: stauffersimon-production
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "24"
+  BUILD_DIR: "public"
+  REMOTE_DIR: "/var/www/stauffersimon.com"
+
+jobs:
+  build-and-deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: "placeholder"
-      - name: Adding Known Hosts
-        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-      - name: Deploy with rsync
-        run: rsync -avz ./public/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/stauffersimon.com --delete-after
+          persist-credentials: false
+
+      - name: Set up Node.js
+        # actions/setup-node v6.5.0
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          set -euo pipefail
+
+          if [ ! -d "$BUILD_DIR" ]; then
+            echo "Build directory '$BUILD_DIR' does not exist."
+            exit 1
+          fi
+
+          if [ ! -f "$BUILD_DIR/index.html" ]; then
+            echo "$BUILD_DIR/index.html does not exist."
+            exit 1
+          fi
+
+          echo "Build completed successfully:"
+          du -sh "$BUILD_DIR"
+          find "$BUILD_DIR" -type f | wc -l
+
+      - name: Ensure rsync is installed
+        run: |
+          set -euo pipefail
+
+          if ! command -v rsync >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install --yes rsync
+          fi
+
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "$SSH_PRIVATE_KEY" ]; then
+            echo "SSH_PRIVATE_KEY is not configured."
+            exit 1
+          fi
+
+          if [ -z "$SSH_KNOWN_HOSTS" ]; then
+            echo "SSH_KNOWN_HOSTS is not configured."
+            exit 1
+          fi
+
+          install -d -m 700 "$HOME/.ssh"
+
+          printf '%s\n' "$SSH_PRIVATE_KEY" \
+            > "$HOME/.ssh/github_deploy_key"
+
+          printf '%s\n' "$SSH_KNOWN_HOSTS" \
+            > "$HOME/.ssh/known_hosts"
+
+          chmod 600 "$HOME/.ssh/github_deploy_key"
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Test VPS connection
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          set -euo pipefail
+
+          ssh \
+            -i "$HOME/.ssh/github_deploy_key" \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$HOME/.ssh/known_hosts" \
+            "$SSH_USER@$SSH_HOST" \
+            "command -v rsync >/dev/null &&
+             test -d '$REMOTE_DIR' &&
+             test -w '$REMOTE_DIR'"
+
+      - name: Deploy website
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          set -euo pipefail
+
+          rsync \
+            --archive \
+            --compress \
+            --delete-after \
+            --delay-updates \
+            --itemize-changes \
+            --chmod=D755,F644 \
+            -e "ssh \
+              -i $HOME/.ssh/github_deploy_key \
+              -o IdentitiesOnly=yes \
+              -o BatchMode=yes \
+              -o StrictHostKeyChecking=yes \
+              -o UserKnownHostsFile=$HOME/.ssh/known_hosts" \
+            "$BUILD_DIR/" \
+            "$SSH_USER@$SSH_HOST:$REMOTE_DIR/"
+
+      - name: Verify deployed website
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          set -euo pipefail
+
+          ssh \
+            -i "$HOME/.ssh/github_deploy_key" \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$HOME/.ssh/known_hosts" \
+            "$SSH_USER@$SSH_HOST" \
+            "curl \
+              --fail \
+              --silent \
+              --show-error \
+              --resolve stauffersimon.com:443:127.0.0.1 \
+              https://stauffersimon.com/ \
+              >/dev/null"
+
+          echo "Deployment and local Nginx verification succeeded."
